@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">仙剑奇侠95</string>
+    <string name="data_download">数据下载</string>
+    <string name="help_settings">辅助功能</string>
+
+    <string name="key_joystick">joystick_type</string>
+    <string name="joystick_type_title">显示摇杆</string>
+    <string name="feedback_haptic">feedback_haptic</string>
+    <string name="feedback_haptic_title">摇杆震动</string>
+    <!-- 金手指 -->
+    <string name="key_move_type">move_type</string>
+    <string name="mod_settings">金手指</string>
+    <string name="move_type_title">移动模式(使用穿墙跳过剧情,会出现NPC消失等问题)</string>
+
+    <string name="key_level_up">level_up</string>
+    <string name="level_up_title">人物升级</string>
+    <string name="level_up_detail">全角色立即升高一级</string>
+
+    <string name="key_money_add">money_add</string>
+    <string name="money_add_title">增加金币</string>
+    <string name="money_add_detail">加10000金钱</string>
+
+
+    <string name="key_no_ad">pre_version</string>
+    <string name="no_ad_title">专业版</string>
+    <string name="no_ad_detail">移除广告,所有辅助功能无限制，包括穿墙，加钱，升级,存档</string>
+
+
+    <string name="key_free">free</string>
+    <string name="free_title">重命名存档</string>
+    <string name="free_detail">重命名存档</string>
+
+    <string name="title_activity_gl">攻略</string>
+
+    <string name="state_load_key">state_load</string>
+    <string name="state_load">载入存档(覆盖存档1,读取存档1即可)</string>
+
+</resources>

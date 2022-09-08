@@ -1,0 +1,56 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory>
+        <CheckBoxPreference
+            app:key="@string/key_joystick"
+            app:summaryOff="隐藏"
+            app:summaryOn="显示"
+            app:title="@string/joystick_type_title" />
+        <CheckBoxPreference
+            app:key="@string/feedback_haptic"
+            app:summaryOff="无"
+            app:summaryOn="震动"
+            app:title="@string/feedback_haptic_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:key="pay_c"
+        app:title="@string/mod_settings">
+
+        <ListPreference
+            app:defaultValue="normal"
+            app:entries="@array/move_type_entries"
+            app:entryValues="@array/move_type_values"
+            app:key="@string/key_move_type"
+            app:title="@string/move_type_title"
+            app:useSimpleSummaryProvider="true" />
+
+        <Preference app:title="@string/level_up_title"
+            app:key="@string/key_level_up"
+            app:summary="@string/level_up_detail"/>
+
+        <Preference app:title="@string/money_add_title"
+            app:key="@string/key_money_add"
+            app:summary="@string/money_add_detail"/>
+
+
+        <ListPreference
+            app:defaultValue="normal"
+            app:entries="@array/state_list_key"
+            app:entryValues="@array/state_list_value"
+            app:key="@string/state_load_key"
+            app:title="@string/state_load"
+            app:useSimpleSummaryProvider="true" />
+
+        <Preference app:title="@string/no_ad_title"
+            app:key="@string/key_no_ad"
+            app:summary="@string/no_ad_detail"/>
+
+<!--        <EditTextPreference app:title="@string/free_title"-->
+<!--            app:key="@string/key_free"-->
+<!--            app:summary="@string/free_detail"-->
+<!--            />-->
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

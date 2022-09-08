@@ -1,0 +1,67 @@
+<resources>
+    <!-- Reply Preference -->
+    <string-array name="move_type_entries">
+        <item>正常</item>
+        <item>穿墙</item>
+    </string-array>
+
+    <string-array name="move_type_values">
+        <item>normal</item>
+        <item>cross</item>
+    </string-array>
+
+    <string-array name="state_list_key">
+        <item>1. 进入仙灵岛</item>
+        <item>2. 前往山神庙</item>
+        <item>3. 带灵儿去仙灵岛</item>
+        <item>4. 到达苏州</item>
+        <item>5. 前往白河村</item>
+        <item>6. 前往隐龙窟</item>
+        <item>7. 前往玉佛寺</item>
+        <item>8. 前往黑水镇</item>
+        <item>9. 进入血池</item>
+        <item>10. 前往鬼阴山</item>
+        <item>11. 扬州城西郊</item>
+        <item>12. 进入扬州城</item>
+        <item>13. 前往盖罗娇客栈</item>
+        <item>14. 扬州城东郊</item>
+        <item>15. 前往尚书府</item>
+        <item>16. 蜀山</item>
+        <item>17. 神木林</item>
+        <item>18. 木道人树洞</item>
+        <item>19. 桃源村</item>
+        <item>20. 大理城外</item>
+        <item>21. 火麒麟洞</item>
+        <item>22. 女娲神殿</item>
+        <item>23. 水底迷宫</item>
+        <item>24. 收集傀儡虫</item>
+        <item>25. 灵儿带队去神坛</item>
+    </string-array>
+    <string-array name="state_list_value">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+    </string-array>
+</resources>

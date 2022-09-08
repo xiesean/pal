@@ -1,0 +1,17 @@
+.gradle
+.idea
+app/build/
+app/.externalNativeBuild/
+*swp
+*swo
+.cxx/
+app/release/
+*.o
+*.cflags
+*.o.d
+build
+obj
+app/src/main/libs
+app/src/main/obj
+**/dest/
+libfreetype.a

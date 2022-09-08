@@ -1,0 +1,110 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+// Apply the Crashlytics Gradle plugin
+apply plugin: 'com.google.firebase.crashlytics'
+
+
+android {
+    compileSdkVersion 30
+
+    defaultConfig {
+        applicationId "org.sean.pal95"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 54
+        versionName "1.2.6"
+        javaCompileOptions{
+            annotationProcessorOptions {
+                includeCompileClasspath true
+            }
+        }
+    }
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+
+
+    sourceSets.main {
+        jniLibs.srcDir 'libs' // <-- Set your folder here!
+    }
+
+    //配置keystore签名
+    signingConfigs {
+        release {
+            storeFile file("../key/sign_xl")
+            storePassword "xielei987xl"
+            keyAlias "sign_xl"
+            keyPassword "xielei987xl"
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            signingConfig signingConfigs.release
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            signingConfig signingConfigs.release
+        }
+    }
+    buildToolsVersion '30.0.3'
+
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "pal-${variant.versionName}-" + getBuildTime() + ".apk"
+        }
+    }
+}
+
+def getBuildTime() {
+    return new Date().format('yyyyMMddHHmmss')
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.preference:preference:1.1.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.navigation:navigation-fragment:2.3.5'
+    implementation 'androidx.navigation:navigation-ui:2.3.5'
+
+
+    def aria_version = "3.8.15"
+    implementation "com.arialyy.aria:core:$aria_version"
+    annotationProcessor "com.arialyy.aria:compiler:$aria_version"
+    implementation "com.arialyy.aria:ftpComponent:$aria_version" // 如果需要使用ftp，请增加该组件
+    implementation "com.arialyy.aria:sftpComponent:$aria_version"  // 如果需要使用ftp，请增加该组件
+    implementation "com.arialyy.aria:m3u8Component:$aria_version" // 如果需要使用m3u8下载功能，请增加该组件
+
+    implementation 'com.google.android.gms:play-services-ads:20.3.0'
+    implementation 'com.google.android.gms:play-services-identity:17.0.1'
+    implementation 'com.google.android.gms:play-services-gcm:17.0.0'
+
+    def lifecycle_version = "2.3.1"
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-runtime:$lifecycle_version"
+    //noinspection LifecycleAnnotationProcessorWithJava8
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+
+    def billing_version = "3.0.3"
+    implementation "com.android.billingclient:billing:$billing_version"
+
+    // Import the Firebase BoM
+    implementation platform('com.google.firebase:firebase-bom:28.3.1')
+
+    // Add the dependency for the Firebase SDK for Google Analytics
+    // When using the BoM, don't specify versions in Firebase dependencies
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-firestore'
+    implementation 'com.google.firebase:firebase-storage'
+
+    // Declare the dependencies for the Crashlytics and Analytics libraries
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-crashlytics'
+}
